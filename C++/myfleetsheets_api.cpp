@@ -82,6 +82,7 @@ int main(int argc, char* argv[]) {
 	int argi = 1;
 	while (argi < argc) {
 		string flag = argv[argi];
+		if (argi + 1 == argc) { printf("Argument must have value: %s\n", flag.c_str()); exit(EXIT_FAILURE); }
 		string value = argv[argi+1];
 		argi += 2;
 
