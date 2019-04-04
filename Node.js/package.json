@@ -1,0 +1,11 @@
+{
+  "name": "myfleetsheets_api",
+  "version": "1.0.0",
+  "description": "A Node.js wrapper for the Fleet Sheets API",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Conor Stuart Roe",
+  "license": "ISC"
+}
