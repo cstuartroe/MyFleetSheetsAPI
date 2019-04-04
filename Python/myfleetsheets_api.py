@@ -35,8 +35,8 @@ API_BASE_URL = "https://api.myfleetsheets.com/api/planes/?"
 
 
 def APIrequest(**kwargs):
-    if "f" in kwargs:
-        if kwargs["e"] or kwargs["k"]:
+    if kwargs.get("f"):
+        if kwargs.get("e") or kwargs.get("k"):
             raise ValueError("If a credentials file is provided, there is no need to provide email and API key separately")
             
         try:
@@ -52,7 +52,7 @@ def APIrequest(**kwargs):
             raise ValueError("Invalid credentials file")
 
     else:
-        if kwargs["e"] or kwargs["k"]:
+        if not (kwargs.get("e") and kwargs.get("k")):
             raise ValueError("Please pass your email address and API key")
 
         email = kwargs["e"]
@@ -62,13 +62,19 @@ def APIrequest(**kwargs):
 
     for kw, arg in kwargs.items():
         if kw in API_PARAM_FIELDS and arg is not None:
-            url += "%s=%s&" % (kw, up.quote(arg))
+            if type(arg) is list:
+                arg = ",".join(map(lambda x: str(x), arg))
+                
+            url += "%s=%s&" % (kw, up.quote(str(arg)))
 
     response = ur.urlopen(url, context = ssl._create_unverified_context())
 
     raw_json = response.read()
 
-    return json.loads(raw_json)
+    try:
+        return json.loads(raw_json)
+    except json.decoder.JSONDecodeError as e:
+        raise ValueError(raw_json)
 
 if __name__ == "__main__":
     kwargs = vars(parser.parse_args())
