@@ -50,7 +50,7 @@ string exec(const char* cmd) {
 string APIrequest(string creds_filename = "", string email = "", string key = "", string since = "", string make = "", string model = "", 
 	              string serial = "", string year = "", string max_price = "", string min_price = "", string source = "") {
 
-	string command = "curl -ksb -H \"Accept: application/json\" \"https://api.myfleetsheets.com/api/planes/?";
+	string command = "curl -sb -H \"Accept: application/json\" \"https://api.myfleetsheets.com/api/planes/?";
 
 	if (creds_filename != "") {
 		if (email != "" || key != "") {

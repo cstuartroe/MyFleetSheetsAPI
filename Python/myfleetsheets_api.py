@@ -67,7 +67,7 @@ def APIrequest(**kwargs):
                 
             url += "%s=%s&" % (kw, up.quote(str(arg)))
 
-    response = ur.urlopen(url, context = ssl._create_unverified_context())
+    response = ur.urlopen(url)
 
     raw_json = response.read()
 
