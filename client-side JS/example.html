@@ -31,7 +31,7 @@
 			}
 
 			var fillTable = function (listing_json) {
-				for (var i = 0; i < listing_json["listings"].length; i++) {
+				for (var i = 0; i < listing_json["results"].length; i++) {
 					var new_tr = document.createElement("tr");
 					document.getElementById("listing_table").appendChild(new_tr);
 
@@ -39,7 +39,7 @@
 						var new_td = document.createElement("td");
 						new_tr.appendChild(new_td);
 
-						var value = listing_json["listings"][i][cols[j]];
+						var value = listing_json["results"][i][cols[j]];
 						if (value) {
 							var new_tn = document.createTextNode(value);
 							new_td.appendChild(new_tn);
