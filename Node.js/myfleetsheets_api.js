@@ -16,15 +16,21 @@ function handle_options(options) {
 		if (options["filename"]) {
 			if (options["email"] || options["key"]) {
 				reject("If a credentials file is provided, there is no need to provide email and API key separately")
-			} else {
+			} else if (fs.existsSync(options["filename"])) {
 				var raw_creds = fs.readFileSync(options["filename"], "utf8");
 				var creds = JSON.parse(raw_creds);
 				options["email"] = creds["email"];
 				options["key"] = creds["key"];
 				resolve(options);
+			} else {
+				reject("File not found: " + options["filename"]);
 			}
 		} else {
-			resolve(options);
+			if (options["email"] && options["key"]) {
+				resolve(options);
+			} else {
+				reject("Please pass your email address and API key");
+			}
 		}
 	});
 }

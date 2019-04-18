@@ -4,7 +4,7 @@ listing_json = mfs.APIrequest(e = "plane_enthusiast@example.com",
                               k = "b2I-Jh_pvGVeGGJ8",
                               since = "4d",
                               max_price = 10000000,
-                              year = [2012,2013,2014,2015,2016,2017,2018,2019],
+                              year = "2012-2019",
                               make = ["beechcraft","cessna","pilatus"],
                               source = None)
 

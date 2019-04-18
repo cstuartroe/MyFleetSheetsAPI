@@ -8,7 +8,7 @@ const prefs = {'email':'plane_enthusiast@example.com',
              'since':'4d',
              'max_price':10000000,
              'year':'2012-2019',
-             'make':'beechcraft,cessna,pilatus',
+             'make':["beechcraft","cessna","pilatus"],
              'source':null};
 
 const w = 25;
@@ -29,7 +29,11 @@ console.log();
 myfleetsheets_api.APIrequest(prefs, (response) => {
   response["results"].map( (listing) => {
     PRINT_FIELDS.map( (field) => {
-      process.stdout.write(ljust(listing[field], w));
+      if (listing[field]) {
+        process.stdout.write(ljust(listing[field], w));
+      } else {
+        process.stdout.write(" ".repeat(w));
+      }
     });
     console.log();
   });
