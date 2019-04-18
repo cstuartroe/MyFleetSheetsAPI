@@ -1,4 +1,4 @@
-# The Python Fleet Sheets API wrapper
+# The Fleet Sheets API wrapper for Node.js
 
 ## Dependencies
 
@@ -23,7 +23,7 @@ The method `APIrequest`, in addition to being used internally for the CLI, can a
 To use `APIrequest`, simply import `myfleetsheets_api` into your script, for example:
 
 ```
-myfleetsheets_api = require("myfleetsheets_api");
+const myfleetsheets_api = require("myfleetsheets_api");
 
 var prefs = {'filename':'credentials.json',
              'since':'7d',
@@ -33,3 +33,5 @@ myfleetsheets_api.APIrequest(prefs, (response) => {
   console.log(JSON.stringify(response, null, 4));
 });
 ```
+
+A fuller example can be seen in `example.js`.
