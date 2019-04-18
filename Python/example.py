@@ -15,8 +15,7 @@ for header in headers:
 
 print()
 
-for listing in listing_json["listings"]:
+for listing in listing_json["results"]:
     for header in headers:
         print(str(listing.get(header,"")).ljust(25," "), end="")
     print()
-

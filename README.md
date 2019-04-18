@@ -1,7 +1,7 @@
 # Introducing the Fleet Sheets API!
 
-We at [Fleet Sheets](https://www.myfleetsheets.com/) are rolling out a set of API wrappers for several programming languages, 
-including C++, Java, Python, Javascript (client-side and Node.js), and PHP. These will enable you to easily access the Fleet Sheets API
+We at [Fleet Sheets](https://www.myfleetsheets.com/) are rolling out a set of API wrappers for several programming languages,
+including C++, Java, Python, Javascript (client-side and Node.js), Ruby, and PHP. These will enable you to easily access the Fleet Sheets API
 in your programming language of choice, and each wrapper exposes two different methods of use:
 
  * A command-line interface
@@ -15,7 +15,7 @@ in your programming language of choice, and each wrapper exposes two different m
 
 Each wrapper supports an identical CLI, which has the following parameters:
 
- * `-f`: The credentials filename (download from the [API portal](https://www.myfleetsheets.com/api/portal))
+ * `-f`: The credentials filename (a download link will be provided in your Fleet Sheets email updates)
  * `-e`: The email address associated with your account
  * `-k`: Your API key
  * `--since`, `--make`, `--model`, `--serial`, `--year`, `--max_price`, `--min_price`, `--source`: See the [API description](https://api.myfleetsheets.com/api/) on our site.
@@ -24,7 +24,7 @@ If you pass a credentials file, don't pass email and API key separately, and vic
 
 Not sure what to query? Try this example command:
 
-`./myfleetsheets_api -f credentials.json --year "2010-2019" --make "cessna, pilatus, embraer" --since "5d"`
+`./myfleetsheets_api -e plane_enthusiast@example.com -k b2I-Jh_pvGVeGGJ8  --since 4d --max_price 10000000 --year 2012-2019 --make beechcraft,cessna,pilatus`
 
-(replacing `./myfleetsheets_api` with e.g. `python myfleetsheets_api.py`, `java MyFleetSheetsAPI.class`, `npm run myFleetSheetsAPI`, 
+(replacing `./myfleetsheets_api` with e.g. `python myfleetsheets_api.py`, `java MyFleetSheetsAPI.class`, `npm run myFleetSheetsAPI`,
 depending on which language you use)
