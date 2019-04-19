@@ -8,7 +8,7 @@ in your programming language of choice, and each wrapper exposes two different m
    * outputs plaintext JSON to standard terminal output, which can be redirected to a file
    * is essentially the same between languages
  * An API within the language
-   * provides a method in the language to fetch API data as JSON (Python and JS) or a language-specific data structure (Java, C++, PHP)
+   * provides a method in the language to fetch API data as JSON or a close equivalent (Python, Ruby, JS, PHP) or a language-specific data structure (Java, C++)
    * varies slightly according to programming language
 
 ## The Fleet Sheets CLI
@@ -26,5 +26,5 @@ Not sure what to query? Try this example command:
 
 `./myfleetsheets_api -e plane_enthusiast@example.com -k b2I-Jh_pvGVeGGJ8  --since 4d --max_price 10000000 --year 2012-2019 --make beechcraft,cessna,pilatus`
 
-(replacing `./myfleetsheets_api` with e.g. `python myfleetsheets_api.py`, `java MyFleetSheetsAPI.class`, `node myfleetsheets_api_cli.js`,
+(replacing `./myfleetsheets_api` with e.g. `python myfleetsheets_api.py`, `java MyFleetSheetsAPI.class`, `node myfleetsheets_api_cli.js`, `ruby myfleetsheets_api.rb`
 depending on which language you use)
