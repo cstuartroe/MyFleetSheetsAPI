@@ -18,6 +18,6 @@ If you want to modify it, you can download JARs for the two dependencies into `l
 java -p bin:lib -m com.myfleetsheets.api/com.myfleetsheets.api.MyFleetSheetsAPI [options]
 ```
 
-## The JS API
+## The Java API
 
 `MyFleetSheetsAPI` exposes two methods: `APIrequest_raw`, which returns the raw API response as a string, and `APIrequest`, which returns a `JSONObject`. Both methods take a single argument `HashMap<String, String> params` with string keys from the set `filename`, `email`, `key`, `since`, `make`, `model`, `serial`, `year`, `max_price`, `min_price`, and `source`, with usage equivalent to the corresponding command line arguments.

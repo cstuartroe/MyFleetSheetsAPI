@@ -4,5 +4,11 @@ This API wrapper for JS in the browser couldn't be simpler - one short function 
 making the AJAX request. It takes as input a JSON dictionary of query parameters and a callback function, and when the AJAX
 request completes it passes the entire JSON response to the callback.
 
-You can see an example of how to use the wrapper with `example.html` - just download them both to the same directory and 
+If you want to use us as a CDN, you can import the script like so:
+
+```
+<script src="https://api.myfleetsheets.com/static/js/myfleetsheets_api.js"></script>
+```
+
+You can see an example of how to use the wrapper with `example.html` - just download them both to the same directory and
 open `example.html` in any browser, and see it magically become populated with information!
