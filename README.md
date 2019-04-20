@@ -26,5 +26,5 @@ Not sure what to query? Try this example command:
 
 `./myfleetsheets_api -e plane_enthusiast@example.com -k b2I-Jh_pvGVeGGJ8  --since 4d --max_price 10000000 --year 2012-2019 --make beechcraft,cessna,pilatus`
 
-(replacing `./myfleetsheets_api` with e.g. `python myfleetsheets_api.py`, `java MyFleetSheetsAPI.class`, `node myfleetsheets_api_cli.js`, `ruby myfleetsheets_api.rb`
-depending on which language you use)
+(replacing `./myfleetsheets_api` with e.g. `python myfleetsheets_api.py`, `java -jar MyFleetSheetsAPI.jar`, `node myfleetsheets_api_cli.js`, `ruby myfleetsheets_api.rb`,
+or `php myfleetsheets_api.php`, depending on which language you use)
